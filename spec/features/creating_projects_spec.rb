@@ -24,6 +24,6 @@ RSpec.feature "Users can create new projects" do
     click_button "Create project"
 
     expect(page).to have_content "Project has not been created"
-    expect(page).to have_content "Name can`t be blank!"
+    expect(page).to have_content "Name can't be blank"
   end
 end
