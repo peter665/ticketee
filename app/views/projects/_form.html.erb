@@ -1,5 +1,5 @@
-<%= form_for(project) do |f| %>
-  <% if project.errors.any? %>
+<%= simple_form_for(project) do |f| %>
+  <!-- <% if project.errors.any? %>
     <div id="error explanation">
       <h2><%=pluralize project.errors.count, "error"%>
       prohibited this project from being saved: </h2>
@@ -10,17 +10,10 @@
         <%end%>
       </ul>
     </div>
-  <% end %>
-  <p>
-    <%= f.label :name %> <br />
-    <%= f.text_field :name %> <br />
-  </p>
+  <% end %> -->
 
-  <p>
-    <%= f.label :description %> <br />
-    <%= f.text_field :description %> <br />
-  </p>
+  <%= f.input :name %>
+  <%= f.input :description %>
 
-  <%= f.submit %>
-
+  <%= f.button :submit, class: 'btn-primary' %>
 <% end %>

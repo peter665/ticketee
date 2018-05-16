@@ -8,6 +8,7 @@
         Ticketee
       <%end%>
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,10 +16,28 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item <%= 'active' if current_page?('/') %>">
+           <a class="nav-link" href="<%=projects_path%>">Home <span class="sr-only">(current)</span></a>
+         </li>
+       </ul>
+     </div>
+    </div>
+  </nav>
+  <div class="container">
     <% flash.each do |key, message| %>
-      <div><%=message%></div>
+      <div class="alert <%=key%>"><%=message%></div>
     <% end %>
 
     <%= yield %>
+  </div>
   </body>
 </html>

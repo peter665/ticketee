@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'responsive';
+@import 'projects';
+
+form {
+  max-width: 500px;
+}
+
+ul.actions {
+  @extend .list-unstyled;
+  @extend .list-inline;
+}
+
+a.new, a.edit, a.delete {
+  @extend .btn;
+
+  &:before {
+    font-family: "FontAwesome";
+    padding-right: 0.5rem;
+  }
+}
+
+a.new {
+  @extend .btn-success;
+  &:before {
+    @extend .fa-plus;
+  }
+}
+
+a.edit {
+  @extend .btn-warning;
+
+  &:before {
+    @extend .fa-pencil;
+  }
+}
+
+a.delete {
+  @extend .btn-danger;
+
+  &:before {
+    @extend .fa-trash;
+  }
+}
+
+header {
+  position: relative;
+  bottom: 0px;
+  @extend .pb-2;
+  @extend .mt-4;
+  @extend .mb-2;
+  @extend .border-bottom;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+}
+
+.notice {
+  @extend .alert-info;
+}
+
+.alert {
+  @extend .alert-danger
+}
