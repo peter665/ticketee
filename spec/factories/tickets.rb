@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :ticket do
     name "MyString"
-    despcription "MyString"
+    description "MyString"
     project nil
   end
 end
