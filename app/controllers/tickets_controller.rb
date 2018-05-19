@@ -33,7 +33,10 @@ class TicketsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @ticket.destroy
+    flash[:notice] = 'Ticket has been deleted.'
+    redirect_to @project
   end
 
   private
