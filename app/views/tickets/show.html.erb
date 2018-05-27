@@ -3,18 +3,22 @@
     <h1><%=@project.name%></h1>
   </header>
 
-  <header>
+
     <h2><%=@ticket.name%></h2>
 
-    <ul class="actions">
-      <%= link_to 'Edit Ticket', [:edit, @project, @ticket], class:'edit' %>
-      <%=link_to 'Delete Ticket', [@project,@ticket],
-            class: 'delete',
-            method: :delete,
-            data: { confirm: "Are you sure you want to delete this project?" }%>
-    </ul>
-  </header>
-
-  <%= simple_format(@ticket.description) %>
+    <div id="attributes" class="card">
+      <h5 class="card-header">Author: <%= @ticket.author.email %></h5>
+      <div class="card-body">
+        <p class="card-text">Created: <%= time_ago_in_words(@ticket.created_at) %> ago </p>
+        <p><%= simple_format(@ticket.description) %></p>
+        <p id="buttons">
+          <%= link_to 'Edit Ticket', [:edit, @project, @ticket], class:'edit' %>
+          <%=link_to 'Delete Ticket', [@project,@ticket],
+                  class: 'delete',
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this project?" }%>
+        </p>
+      </div>
+    </div>
 
 </div>
