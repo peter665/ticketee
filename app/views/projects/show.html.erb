@@ -3,8 +3,8 @@
 <header>
   <h1><%= @project.name %></h1>
   <ul class="actions">
-    <%=link_to 'Edit Project',edit_project_path(@project), class: 'edit'%>
-    <%=link_to 'Delete Project', project_path(@project),class: 'delete',
+    <%=link_to 'Edit Project', edit_project_path(@project), class: 'edit'%>
+    <%=link_to 'Delete Project', admin_project_path(@project), class: 'delete',
         method: :delete,
         data: { confirm: "Are you sure you want to delete this project?" }%>
   </ul>
@@ -13,7 +13,7 @@
 <header>
   <h2>Tickets</h2>
   <ul class="actions">
-    <li><%=link_to 'New Ticket', new_project_ticket_path(@project), class: 'new'%></li>    
+    <li><%=link_to 'New Ticket', new_project_ticket_path(@project), class: 'new'%></li>
   </ul>
 </header>
 
