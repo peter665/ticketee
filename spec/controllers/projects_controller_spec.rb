@@ -6,7 +6,6 @@ RSpec.describe ProjectsController, type: :controller do
 
     expect(response).to redirect_to projects_path
 
-    expect(flash[:alert]).to eq 'The project you were looking for
-    could not be found.'
+    expect(flash[:danger]).to eq 'The project you were looking for could not be found.'
   end
 end
