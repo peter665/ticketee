@@ -3,8 +3,11 @@ require 'rails_helper'
 RSpec.feature 'Users can delete tickets' do
   let(:project) { FactoryBot.create :project, name:'Test Project' }
   let(:ticket)  { FactoryBot.create :ticket, project: project }
-
+  let(:author)  { FactoryBot.create :user }
+  
   before do
+    login_as author
+    assign_role! author, :viewr, project
     visit project_ticket_path project, ticket
   end
 
